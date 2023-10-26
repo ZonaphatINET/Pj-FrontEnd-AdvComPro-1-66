@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Club Of Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #d8f0f3;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2196f3;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #2196f3;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1769aa;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            color: #1769aa;
+        }
+    </style>
+</head>
+<body>
+    <h1>Create Club Of Player</h1>
+    <form method="post" action="/createClubOfPlayer">
+        <label for="PlayerID">PlayerID</label>
+        <input type="text" id="PlayerID" name="PlayerID">
+        <br>
+        <label for="ClubID">ClubID</label>
+        <input type="text" id="ClubID" name="ClubID">
+        <br>
+        <input type="submit" value="create">
+        <br>
+    </form>
+    <a href="/">Back to List</a>
+</body>
+</html>

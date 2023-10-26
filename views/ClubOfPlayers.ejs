@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Of Player</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+.actions a {
+    display: inline-block;
+    margin-right: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 3px;
+}
+
+.create-link {
+    display: block;
+    width: 200px;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px 0;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Club Of Player</h1>
+    <table>
+        <tr>
+            <th>Player ID</th>
+            <th>Club ID</th>
+            <th>Actions</th>
+        </tr>
+        <% for (var i = 0; i < ClubOfPlayers.length; i++) { %>
+            <tr>
+                <td><%= ClubOfPlayers[i].PlayerID %></td>
+                <td><%= ClubOfPlayers[i].ClubID %></td>
+                <td class="actions">
+                    <a href="/ClubOfPlayer/<%= ClubOfPlayers[i].PlayerID %>">View</a>
+                    <a href="/updateClubOfPlayer/<%= ClubOfPlayers[i].PlayerID %>">Update</a>
+                    <a href="/deleteClubOfPlayer/<%= ClubOfPlayers[i].PlayerID %>">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <a href="/createClubOfPlayer" class="create-link">Create New Club Of Players</a>
+    <a href="/Players" class="create-link">Add Player</a>
+    <a href="/Clubs" class="create-link">Add Club</a>
+    <br>
+
+    <div class="footer">
+        &copy; 2023 Welcome to premier league Players
+    </div>
+</body>
+</html>
