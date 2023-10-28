@@ -154,14 +154,17 @@ app.get("/deleteClub/:ID", async (req, res) => {
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 app.get('/', async (req, res) => {
-    try{
-        const response = await axios.get(base_url + '/ClubOfPlayer');
+    try {
+        const response = await axios.get(`${base_url}/ClubOfPlayer`);
         res.render('ClubOfPlayers', { ClubOfPlayers: response.data });
-    } catch (err) {
-        console.log(err);
-        res.status(500).send('err');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
     }
 });
+
+// ส่วนอื่น ๆ ยังคงเหมือนเดิม
+// ...
 
 app.get("/ClubOfPlayer/:PlayerID", async (req, res) => {
     try {
